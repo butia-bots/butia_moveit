@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: doris_description
+    relative_path: urdf/doris_description.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/doris.srdf
+  CONFIG:
+    author_name: Cris Lima Froes
+    author_email: cris.lima.froes@gmail.com
+    generated_timestamp: 1595181085
