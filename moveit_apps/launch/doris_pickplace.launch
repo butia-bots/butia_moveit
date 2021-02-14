@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Run MTC pick and place -->
+  <rosparam file="$(find moveit_apps)/config/doris_config.yaml" command="load" ns="/butia_moveit" />
+  <node name="task_server" pkg="moveit_apps" type="task_server" output="screen">
+  </node>
+</launch>

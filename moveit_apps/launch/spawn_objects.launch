@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- send robot urdf to param server -->
+    <param name="table_description" command="xacro $(find moveit_apps)/urdf/table.urdf.xacro" />
+    <param name="prisma_description" command="xacro $(find moveit_apps)/urdf/prisma.urdf.xacro" />
+
+    <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
+    <node name="spawn_table_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param table_description -model table" respawn="false" output="screen" />
+    <node name="spawn_prisma_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param prisma_description -model prisma -x 0.5 -y -0.25 -z 1.05" respawn="false" output="screen" />
+
+
+</launch>
