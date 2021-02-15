@@ -9,6 +9,8 @@ Panels:
         - /Motion Planning Tasks1
         - /Motion Planning Tasks1/Scene1
         - /Motion Planning Tasks1/Tasks1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5393258333206177
     Tree Height: 533
   - Class: rviz/Help
@@ -172,6 +174,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          realsense_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          realsense_mount_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           rear_caster_link:
             Alpha: 1
             Show Axes: false
@@ -218,8 +229,6 @@ Visualization Manager:
       Markers:
         All at once?: false
         Value: true
-        ik frame: true
-        ik target: true
       Name: Motion Planning Tasks
       Robot:
         Fixed Robot Color: 150; 50; 150
@@ -314,6 +323,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          realsense_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          realsense_mount_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           rear_caster_link:
             Alpha: 1
             Show Axes: false
@@ -366,7 +384,7 @@ Visualization Manager:
       State Display Time: 0.05 s
       Task Solution Topic: /task_server/solution
       Tasks:
-        Pick: 1
+        {}
       Trail Step Size: 1
       Value: true
     - Acceleration_Scaling_Factor: 0.1
@@ -402,126 +420,6 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          arm_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          base_footprint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          dorso_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          elbow_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          forearm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          frontal_caster_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          head_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          hokuyo_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          kinect2_depth_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          kinect2_depth_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          kinect2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          kinect2_rgb_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          kinect2_rgb_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          laser:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          left_finger_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          left_wheel_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          rear_caster_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          right_finger_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          right_wheel_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          roll_2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          roll_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          shoulder_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          yaw_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -567,131 +465,127 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          arm_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          base_footprint:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          dorso_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          elbow_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          forearm_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          frontal_caster_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          gripper_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          head_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          hokuyo_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          kinect2_depth_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          kinect2_depth_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          kinect2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          kinect2_rgb_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          kinect2_rgb_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          laser:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          left_finger_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          left_wheel_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          rear_caster_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          right_finger_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          right_wheel_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          roll_2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          roll_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          shoulder_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          yaw_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
       Value: false
       Velocity_Scaling_Factor: 0.1
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        arm_base_link:
+          Value: false
+        base_footprint:
+          Value: false
+        base_link:
+          Value: false
+        dorso_link:
+          Value: false
+        elbow_link:
+          Value: false
+        forearm_link:
+          Value: false
+        frontal_caster_link:
+          Value: false
+        gripper_link:
+          Value: false
+        head_link:
+          Value: false
+        hokuyo_frame:
+          Value: false
+        kinect2_depth_frame:
+          Value: false
+        kinect2_depth_optical_frame:
+          Value: false
+        kinect2_link:
+          Value: false
+        kinect2_rgb_frame:
+          Value: false
+        kinect2_rgb_optical_frame:
+          Value: true
+        laser:
+          Value: false
+        left_finger_link:
+          Value: false
+        left_wheel_link:
+          Value: false
+        odom:
+          Value: false
+        realsense_color_optical_frame:
+          Value: true
+        realsense_link:
+          Value: false
+        realsense_mount_link:
+          Value: false
+        rear_caster_link:
+          Value: false
+        right_finger_link:
+          Value: false
+        right_wheel_link:
+          Value: false
+        roll_2_link:
+          Value: false
+        roll_link:
+          Value: false
+        shoulder_link:
+          Value: false
+        world:
+          Value: false
+        yaw_link:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          odom:
+            base_footprint:
+              base_link:
+                dorso_link:
+                  arm_base_link:
+                    shoulder_link:
+                      forearm_link:
+                        elbow_link:
+                          roll_link:
+                            yaw_link:
+                              roll_2_link:
+                                gripper_link:
+                                  left_finger_link:
+                                    {}
+                                  right_finger_link:
+                                    {}
+                                realsense_mount_link:
+                                  realsense_link:
+                                    realsense_color_optical_frame:
+                                      {}
+                  head_link:
+                    {}
+                  kinect2_link:
+                    kinect2_depth_frame:
+                      kinect2_depth_optical_frame:
+                        {}
+                    kinect2_rgb_frame:
+                      kinect2_rgb_optical_frame:
+                        {}
+                  laser:
+                    {}
+                frontal_caster_link:
+                  {}
+                hokuyo_frame:
+                  {}
+                left_wheel_link:
+                  {}
+                rear_caster_link:
+                  {}
+                right_wheel_link:
+                  {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -708,7 +602,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.34167218208313
+      Distance: 2.812316417694092
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -724,9 +618,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5497972965240479
+      Pitch: 0.8797969818115234
       Target Frame: panda_link0
-      Yaw: 5.374950408935547
+      Yaw: 0.3617743253707886
     Saved: ~
 Window Geometry:
   Displays:
@@ -742,9 +636,9 @@ Window Geometry:
     collapsed: false
   MotionPlanning:
     collapsed: false
-  MotionPlanning - Slider:
+  MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000200000000000001f3000002a6fc0200000011fb000000100044006900730070006c006100790073010000003d000002a6000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a00560069006500770073000000026d000000b5000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb0000002e004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d00200053006c0069006400650072010000026f000000480000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000294000002410000000000000000fb00000024005200760069007a00560069007300750061006c0054006f006f006c0073004700750069000000027d0000004b0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000034f000001fb0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000032d000001fb0000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb000000120020002d00200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000013d000001a60000000000000000fb0000002c004d006f00740069006f006e00200050006c0061006e006e0069006e006700200053007400610067006500730000000242000000a10000000000000000fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000015b000001880000017d00ffffff0000000100000198000002a6fc0200000002fb0000002a004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b0073010000003d000002a6000000e700fffffffb0000003c004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730020002d00200053006c006900640065007200000002970000004c0000004100ffffff000002be000002a600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000200000000000001f3000002a6fc0200000011fb000000100044006900730070006c006100790073010000003d000002a6000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a00560069006500770073000000026d000000b5000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb0000002e004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d00200053006c0069006400650072010000026f000000480000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000294000002410000017d00fffffffb00000024005200760069007a00560069007300750061006c0054006f006f006c0073004700750069000000027d0000004b0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000034f000001fb0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000032d000001fb0000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100fffffffb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb000000120020002d00200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000013d000001a60000000000000000fb0000002c004d006f00740069006f006e00200050006c0061006e006e0069006e006700200053007400610067006500730000000242000000a10000000000000000fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067000000015b0000018800000000000000000000000100000198000002a6fc0200000002fb0000002a004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b0073010000003d000002a6000000e700fffffffb0000003c004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730020002d00200053006c006900640065007200000002970000004c0000004100ffffff000002be000002a600000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1621

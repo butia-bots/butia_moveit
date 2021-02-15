@@ -20,4 +20,8 @@
 
   <include file="$(find doris_moveit_config)/launch/ros_controllers.launch"/>
 
+  <node pkg="tf" type="static_transform_publisher" name="realsense_optical_broadcaster" args="0 0 0 -1.5708 0 -1.5708 realsense_link realsense_color_optical_frame 0.001">
+    
+  </node>
+
 </launch>
