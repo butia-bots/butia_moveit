@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+    <include file="$(find doris_moveit_config)/launch/planning_context.launch">
+        <arg name="load_robot_description" value="true"/>
+    </include>
+
+    <!-- launch the gazebo simulator and spawn the robot -->
+    <include file="$(find doris_moveit_config)/launch/gazebo.launch">
+        <arg name="paused" value="false"/>
+        <arg name="gazebo_gui" value="true"/>
+        <arg name="urdf_path" value="$(find doris_description)/urdf/doris_description.urdf.xacro"/>
+    </include>
+
+    <include file="$(find moveit_apps)/launch/spawn_objects.launch" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="$(anon virtual_joint_broadcaster)" args="0 0 0 0 0 0 world odom" />
+
+    <!-- Given the published joint states, publish tf for the robot links -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+    <!-- Run the main MoveIt executable (the move_group node) -->
+    <include file="$(find doris_moveit_config)/launch/move_group.launch">
+        <arg name="allow_trajectory_execution" value="true"/>
+        <arg name="fake_execution" value="false"/>
+        <arg name="info" value="true"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <!-- Load  ExecuteTaskSolutionCapability so we can execute found solutions in simulation -->
+    <param name="move_group/capabilities" value="move_group/ExecuteTaskSolutionCapability" />
+
+    <!-- Run Rviz -->
+    <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find moveit_apps)/config/mtc.rviz">
+        <rosparam command="load" file="$(find doris_moveit_config)/config/kinematics.yaml"/>
+    </node>
+</launch>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="prisma">
+    <xacro:property name="mass" value="0.1" />
+    <xacro:property name="height" value="0.25" />
+    <xacro:property name="width" value="0.04" />
+    <xacro:property name="length" value="0.04" />
+    <link name="prisma_footprint"></link>
+    <link name="prisma">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="${mass}"/>
+            <inertia ixx="${(1/12)*mass*((width**2) + (height**2))}" ixy="0" ixz="0" iyy="${(1/12)*mass*((length**2) + (height**2))}" iyz="0" izz="${(1/2)*mass*((width**2) + (length**2))}" />
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="${length} ${width} ${height}" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${length} ${width} ${height}" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_prisma" type="fixed">
+        <parent link="prisma_footprint" />
+        <child link="prisma" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    <gazebo reference="prisma">
+        <material>Gazebo/Blue</material>
+        <dampingFactor>0.005</dampingFactor>
+        <kp>1000000</kp>
+        <kd>1.0</kd>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <minDepth>0.01</minDepth>
+    </gazebo>
+</robot>

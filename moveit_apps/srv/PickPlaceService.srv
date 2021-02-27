@@ -1,0 +1,6 @@
+string object_name
+geometry_msgs/PoseWithCovarianceStamped object_pose
+string support_surface_name
+geometry_msgs/PoseWithCovarianceStamped surface_pose
+geometry_msgs/PoseStamped place_pose
+---
