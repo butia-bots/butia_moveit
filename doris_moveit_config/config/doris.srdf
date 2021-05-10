@@ -185,4 +185,13 @@
     <disable_collisions link1="right_finger_link" link2="realsense_link" reason="Never"/>
     <disable_collisions link1="left_finger_link" link2="realsense_link" reason="Never"/>
     <disable_collisions link1="gripper_link" link2="realsense_link" reason="Never"/>
+
+    <disable_collisions link1="right_finger_link" link2="roll_2_link" reason="Never"/>
+    <disable_collisions link1="right_finger_link" link2="yaw_link" reason="Never"/>
+    <disable_collisions link1="right_finger_link" link2="roll_link" reason="Never"/>
+
+    <disable_collisions link1="left_finger_link" link2="roll_2_link" reason="Never"/>
+    <disable_collisions link1="left_finger_link" link2="yaw_link" reason="Never"/>
+    <disable_collisions link1="left_finger_link" link2="roll_link" reason="Never"/>
+
 </robot>
