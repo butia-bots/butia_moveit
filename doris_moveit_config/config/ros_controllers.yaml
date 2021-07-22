@@ -38,27 +38,27 @@ arm_controller:
     - roll_2_joint
   gains:
     shoulder_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
     forearm_shoulder_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
     elbow_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
     roll_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
     yaw_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
     roll_2_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
   constraints:
@@ -88,10 +88,10 @@ gripper_controller:
     - right_finger_joint
   gains:
     left_finger_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
     right_finger_joint:
-      p: 10000.0
+      p: 100.0
       d: 0.0
       i: 0.0
