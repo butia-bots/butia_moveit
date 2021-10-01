@@ -111,3 +111,8 @@ gripper_controller:
     right_finger_joint:
       goal: 0.1
       trajectory: 0.1
+initial:  # Define initial robot poses.
+  - group: arm
+    pose: home
+  - group: gripper
+    pose: home

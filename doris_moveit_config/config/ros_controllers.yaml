@@ -95,3 +95,8 @@ gripper_controller:
       p: 100.0
       d: 0.0
       i: 0.0
+initial:  # Define initial robot poses.
+  - group: arm
+    pose: home
+  - group: gripper
+    pose: home
