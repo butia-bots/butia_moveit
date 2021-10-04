@@ -13,6 +13,10 @@ controller_list:
     joints:
       - left_finger_joint
       - right_finger_joint
+  - name: fake_rail_controller
+    type: $(arg execution_type)
+    joints:
+      - dorso_arm_base
 initial:  # Define initial robot poses.
   - group: arm
     pose: home
