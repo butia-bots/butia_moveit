@@ -12,10 +12,10 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   message_runtime
   moveit_core
-  moveit_task_constructor_core
+  #moveit_task_constructor_core
   moveit_ros_planning_interface
   roscpp
-  rosparam_shortcuts
+  #rosparam_shortcuts
   std_msgs
   geometry_msgs
 )
@@ -121,30 +121,30 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-)
+#include_directories(
+#  include
+#  ${catkin_INCLUDE_DIRS}
+#)
 
 ## Declare a C++ library
-add_library(moveit_apps_tasks
-  src/${PROJECT_NAME}/pick_place_task.cpp
-  src/${PROJECT_NAME}/pick_place_base.cpp
-  src/${PROJECT_NAME}/pick_task.cpp
-  src/${PROJECT_NAME}/place_task.cpp
-)
+#add_library(moveit_apps_tasks
+#  src/${PROJECT_NAME}/pick_place_task.cpp
+#  src/${PROJECT_NAME}/pick_place_base.cpp
+#  src/${PROJECT_NAME}/pick_task.cpp
+#  src/${PROJECT_NAME}/place_task.cpp
+#)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-add_dependencies(moveit_apps_tasks ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} moveit_task_constructor_core)
+#add_dependencies(moveit_apps_tasks ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} moveit_task_constructor_core)
 
 
-target_link_libraries(moveit_apps_tasks ${catkin_LIBRARIES})
+#target_link_libraries(moveit_apps_tasks ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(task_server src/task_server.cpp)
+#add_executable(task_server src/task_server.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,13 +154,13 @@ add_executable(task_server src/task_server.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(task_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+#add_dependencies(task_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(task_server
-  ${catkin_LIBRARIES}
-  moveit_apps_tasks
-)
+#target_link_libraries(task_server
+#  ${catkin_LIBRARIES}
+#  moveit_apps_tasks
+#)
 
 #############
 ## Install ##

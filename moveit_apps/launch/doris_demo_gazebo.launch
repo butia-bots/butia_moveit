@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="world_name" default="worlds/empty.world"/>
     <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
     <include file="$(find doris_moveit_config)/launch/planning_context.launch">
         <arg name="load_robot_description" value="true"/>
@@ -8,7 +9,9 @@
     <!-- launch the gazebo simulator and spawn the robot -->
     <include file="$(find doris_moveit_config)/launch/gazebo.launch">
         <arg name="paused" value="false"/>
+        <arg name="world_name" value="$(arg world_name)"/>
         <arg name="gazebo_gui" value="true"/>
+        <arg name="x" value="-3.0"/>
         <arg name="urdf_path" value="$(find doris_description)/urdf/doris_description.urdf.xacro"/>
     </include>
 

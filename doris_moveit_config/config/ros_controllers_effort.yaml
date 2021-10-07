@@ -19,7 +19,6 @@ hardware_interface:
     - right_finger_joint
     - left_wheel_joint
     - right_wheel_joint
-    - dorso_arm_base
   sim_control_mode: 0  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
@@ -39,49 +38,55 @@ arm_controller:
     - roll_2_joint
   gains:
     shoulder_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 100
+      d: 0
+      i: 0
+      i_clamp: 0
     forearm_shoulder_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 100
+      d: 1
+      i: 0
+      i_clamp: 0
     elbow_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 100
+      d: 1
+      i: 0
+      i_clamp: 0
     roll_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 10
+      d: 0
+      i: 0
+      i_clamp: 0
     yaw_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 10
+      d: 0
+      i: 0
+      i_clamp: 0
     roll_2_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 10
+      d: 0
+      i: 0
+      i_clamp: 0
   constraints:
-    goal_time: 0.2
+    goal_time: 0.6
     shoulder_joint:
-      goal: 0.1
-      trajectory: 0.2
+      goal: 0
+      trajectory: 0
     forearm_shoulder_joint:
-      goal: 0.2
-      trajectory: 0.2
+      goal: 0
+      trajectory: 0
     elbow_joint:
-      goal: 0.2
-      trajectory: 0.2
+      goal: 0
+      trajectory: 0
     roll_joint:
-      goal: 0.2
-      trajectory: 0.2
+      goal: 0
+      trajectory: 0
     yaw_joint:
-      goal: 0.2
-      trajectory: 0.2
+      goal: 0
+      trajectory: 0
     roll_2_joint:
-      goal: 0.2
-      trajectory: 0.2
+      goal: 0
+      trajectory: 0
 gripper_controller:
   type: effort_controllers/JointTrajectoryController
   joints:
@@ -89,27 +94,23 @@ gripper_controller:
     - right_finger_joint
   gains:
     left_finger_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 1
+      d: 0
+      i: 0
+      i_clamp: 0
     right_finger_joint:
-      p: 100.0
-      d: 0.0
-      i: 0.0
-rail_controller:
-  type: effort_controllers/JointTrajectoryController
-  joints:
-    - dorso_arm_base
-  gains:
-    dorso_arm_base:
-      p: 100.0
-      d: 0.0
-      i: 0.0
+      p: 1
+      d: 0
+      i: 0
+      i_clamp: 0
   constraints:
-    goal_time: 0.2
-    dorso_arm_base:
+    goal_time: 0.6
+    left_finger_joint:
       goal: 0.1
-      trajectory: 0.2
+      trajectory: 0.1
+    right_finger_joint:
+      goal: 0.1
+      trajectory: 0.1
 initial:  # Define initial robot poses.
   - group: arm
     pose: home

@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
-from scipy.spatial.transform import Rotation as R
 import math
 import sys
 
@@ -24,7 +23,7 @@ if __name__ == '__main__':
         request.object_pose.header.frame_id = 'world'
         request.object_pose.pose.pose.position.x = 0.5
         request.object_pose.pose.pose.position.y = -0.25
-        request.object_pose.pose.pose.position.z = 0.8
+        request.object_pose.pose.pose.position.z = 0.8 + (0.25/2) + (0.1/2)
         request.object_pose.pose.pose.orientation.x = 0
         request.object_pose.pose.pose.orientation.y = 0
         request.object_pose.pose.pose.orientation.z = 0
