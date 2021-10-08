@@ -117,3 +117,5 @@ initial:  # Define initial robot poses.
     pose: home
   - group: gripper
     pose: home
+  - group: rail
+    pose: home

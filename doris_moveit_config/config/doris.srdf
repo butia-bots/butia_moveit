@@ -37,7 +37,7 @@
         <joint name="yaw_joint" value="0"/>
     </group_state>
     <group_state name="home" group="rail">
-        <joint name="dorso_arm_base" value="-0.1"/>
+        <joint name="dorso_arm_base" value="0.5"/>
     </group_state>
     <group_state name="home" group="arm">
         <joint name="elbow_joint" value="0.4339"/>
