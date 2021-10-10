@@ -29,10 +29,10 @@
 
     <!-- If needed, broadcast static tf for robot root -->
 
-
-    <!-- Load controllers -->
-    <include file="$(find doris_moveit_config)/launch/ros_controllers.launch"/>
-
+    <include file="$(find doris_moveit_config)/launch/gazebo.launch">
+        <arg name="world_name" value="$(find doris_simulation_larc2021)/worlds/wrs2020.world"/>
+        <arg name="paused" value="$(arg paused)"/>
+    </include>
 
     <!-- Given the published joint states, publish tf for the robot links -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />

@@ -26,34 +26,9 @@ hardware_interface:
 joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
-controller_list:
-  - name: arm_controller
-    action_ns: arm_follow_joint_trajectory
-    type: FollowJointTrajectory
-    default: true
-    joints:
-      - shoulder_joint
-      - forearm_shoulder_joint
-      - elbow_joint
-      - roll_joint
-      - yaw_joint
-      - roll_2_joint
-  - name: rail_controller
-    action_ns: rail_follow_joint_trajectory
-    type: FollowJointTrajectory
-    default: true
-    joints:
-      - dorso_arm_base
-  - name: gripper_controller
-    action_ns: gripper_action
-    type: GripperCommand
-    default: true
-    parallel: true
-    joints:
-      - left_finger_joint
-      - right_finger_joint
+controller_list: []
 arm_trajectory_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   action_ns: arm_follow_joint_trajectory
   joints:
     - shoulder_joint
@@ -65,37 +40,39 @@ arm_trajectory_controller:
   gains:
     shoulder_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
     forearm_shoulder_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
     elbow_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
     roll_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
     yaw_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
     roll_2_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
   constraints:
-    shoulder_joint: {goal: 0.0}
-    forearm_shoulder_joint: {goal: 0.0}
-    elbow_joint: {goal: 0.0}
-    roll_joint: {goal: 0.0}
-    yaw_joint: {goal: 0.0}
-    roll_2_joint: {goal: 0.0}
+    goal_time: 10.0
+    stopped_velocity_tolerance: 10.0
+    shoulder_joint: {goal: 0.2, trajectory: 0.2}
+    forearm_shoulder_joint: {goal: 0.2, trajectory: 0.2}
+    elbow_joint: {goal: 0.2, trajectory: 0.2}
+    roll_joint: {goal: 0.2, trajectory: 0.2}
+    yaw_joint: {goal: 0.2, trajectory: 0.2}
+    roll_2_joint: {goal: 0.2, trajectory: 0.2}
 gripper_trajectory_controller:
-  type: position_controllers/JointTrajectoryController
+  type: effort_controllers/JointTrajectoryController
   action_ns: gripper_action
   joints:
     - left_finger_joint
@@ -103,15 +80,17 @@ gripper_trajectory_controller:
   gains:
     left_finger_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
     right_finger_joint:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
   constraints:
-    left_finger_joint: {goal: 0.0}
-    right_finger_joint: {goal: 0.0}
+    goal_time: 1.0
+    stopped_velocity_tolerance: 10.0
+    left_finger_joint: {goal: 0.2}
+    right_finger_joint: {goal: 0.2}
 rail_trajectory_controller:
   type: position_controllers/JointTrajectoryController
   action_ns: rail_follow_joint_trajectory
@@ -120,9 +99,11 @@ rail_trajectory_controller:
   gains:
     dorso_arm_base:
       p: 100.0
-      d: 10.0
-      i: 0.01
+      d: 0.0
+      i: 50.0
   constraints:
+    goal_time: 10.0
+    stopped_velocity_tolerance: 1.0
     dorso_arm_base: {goal: 0.0}
 initial:  # Define initial robot poses.
   - group: arm
