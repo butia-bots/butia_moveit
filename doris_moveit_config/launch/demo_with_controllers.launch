@@ -30,7 +30,7 @@
     <!-- If needed, broadcast static tf for robot root -->
 
     <include file="$(find doris_moveit_config)/launch/gazebo.launch">
-        <arg name="world_name" value="$(find doris_simulation_larc2021)/worlds/wrs2020.world"/>
+        <arg name="world_name" value="$(find doris_simulation_larc2021)/worlds/wrs2020_fast_highrtf_knob.world"/>
         <arg name="paused" value="$(arg paused)"/>
     </include>
 

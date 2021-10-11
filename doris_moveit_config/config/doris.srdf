@@ -29,10 +29,10 @@
     <group_state name="crane" group="arm">
         <joint name="elbow_joint" value="-2.85"/>
         <joint name="forearm_shoulder_joint" value="0.32"/>
-        <joint name="roll_2_joint" value="0"/>
-        <joint name="roll_joint" value="1.57"/>
+        <joint name="roll_2_joint" value="3.14"/>
+        <joint name="roll_joint" value="-1.57"/>
         <joint name="shoulder_joint" value="0"/>
-        <joint name="yaw_joint" value="-0.69"/>
+        <joint name="yaw_joint" value="0.69"/>
     </group_state>
     <group_state name="home" group="arm_gripper">
         <joint name="elbow_joint" value="0"/>
@@ -51,9 +51,9 @@
         <joint name="elbow_joint" value="0.4339"/>
         <joint name="forearm_shoulder_joint" value="0.9546"/>
         <joint name="roll_2_joint" value="0"/>
-        <joint name="roll_joint" value="1.57"/>
+        <joint name="roll_joint" value="-1.57"/>
         <joint name="shoulder_joint" value="0"/>
-        <joint name="yaw_joint" value="-1.57"/>
+        <joint name="yaw_joint" value="1.57"/>
     </group_state>
     <group_state name="home" group="gripper">
         <joint name="left_finger_joint" value="0"/>
