@@ -29,4 +29,6 @@
     
   </node>
 
+  <node name="grasp_event_republisher" pkg="gazebo_grasp_plugin_ros" type="grasp_event_republisher"></node>
+
 </launch>
