@@ -1,4 +1,5 @@
-# Copyright (c) 2019 TOYOTA MOTOR CORPORATION
+#!/bin/bash
+# Copyright (c) 2020 TOYOTA MOTOR CORPORATION
 # All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
@@ -24,31 +25,15 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
+set -e
 
-FROM ghcr.io/butia-bots/butia_docker:melodic
+#source /opt/ros/$ROS_DISTRO/setup.bash
+source /moveit_ws/devel/setup.bash
 
-SHELL ["/bin/bash", "-c"]
+# make rosmaster accesible from the host
+export ROS_IP=`hostname -i`
 
-ENV DEBIAN_FRONTEND noninteractive
+# reject access to gazebo service from external host
+export GAZEBO_IP_WHITE_LIST="127.0.0.1"
 
-ENV NVIDIA_VISIBLE_DEVICES \
-    ${NVIDIA_VISIBLE_DEVICES:-all}
-ENV NVIDIA_DRIVER_CAPABILITIES \
-    ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}compute,compat32,graphics,utility,video,display
-
-RUN mkdir -p /moveit_ws/src
-
-WORKDIR /moveit_ws
-
-COPY . ./src/butia_moveit
-
-RUN vcs import . < src/butia_moveit/butia_moveit.repos
-
-RUN source /butia_ws/devel/setup.bash && rosdep update && rosdep install --from-paths src --ignore-src -y
-
-RUN source /butia_ws/devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=Release
-
-ADD entrypoint.sh /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
-
+exec "$@"
