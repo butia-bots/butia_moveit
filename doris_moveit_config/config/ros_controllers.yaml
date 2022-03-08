@@ -98,7 +98,7 @@ rail_trajectory_controller:
     - dorso_arm_base
   gains:
     dorso_arm_base:
-      p: 30000.0
+      p: 100.0
       d: 0.0
       i: 10.0
   #constraints:

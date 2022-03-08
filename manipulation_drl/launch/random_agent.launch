@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find doris_moveit_config)/launch/demo_gazebo.launch" />
+    <node pkg="manipulation_drl" type="random_agent.py" name="random_agent">
+        
+    </node>
+</launch>
