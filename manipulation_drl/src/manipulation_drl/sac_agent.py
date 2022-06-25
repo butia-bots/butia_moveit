@@ -43,7 +43,6 @@ if __name__ == '__main__':
             stop={
                 "episode_reward_mean": 250,
             },
-            local_dir="/home/cris/butia_ws/src/butia_moveit/manipulation_drl/agents/sac_rllib_reach",
             restore=restore,
             config=config,
             callbacks=[
