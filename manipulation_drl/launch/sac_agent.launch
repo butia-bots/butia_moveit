@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-    <include file="$(find doris_moveit_config)/launch/demo_gazebo.launch" />
-    <node launch-prefix="xterm -e" pkg="manipulation_drl" type="sac_agent.py" name="sac_agent">
+    <include file="$(find manipulation_drl)/launch/rl_empty_world.launch" />
+    <node pkg="manipulation_drl" type="sac_agent.py" name="sac_agent">
         
     </node>
 </launch>

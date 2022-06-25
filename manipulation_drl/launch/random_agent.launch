@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-    <include file="$(find doris_moveit_config)/launch/demo_gazebo.launch" />
     <node pkg="manipulation_drl" type="random_agent.py" name="random_agent">
         
     </node>
+    <!--node ns="doris_arm" pkg="interbotix_xs_sdk" type="xs_sdk_sim" name="xs_sdk_sim">
+        <param name="motor_configs" value="$(find interbotix_xs_sdk)/config/motor_configs_template.yaml"/>
+        <param name="mode_configs" value="$(find interbotix_xs_sdk)/config/mode_configs_template.yaml"/>
+    </node-->
 </launch>

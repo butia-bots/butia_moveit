@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find interbotix_xsarm_gazebo)/launch/xsarm_gazebo.launch">
+        <arg name="world_name" value="$(find manipulation_drl)/worlds/empty_drl.world"/>
+        <arg name="robot_model" value="doris_arm" />
+        <arg name="paused" value="false" />
+        <arg name="use_position_controllers" value="true" />
+    </include>
+</launch>

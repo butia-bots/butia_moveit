@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="manipulation_drl" type="collect_experience.py" name="expert_agent">
+        
+    </node>
+</launch>
